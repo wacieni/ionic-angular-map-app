@@ -1,0 +1,1 @@
+npx ionic generate page input-validation --no-interactive

@@ -1,0 +1,67 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Input Validation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="header-section ion-margin-bottom">
+    <h1>Create Account</h1>
+    <p>Please fill in your details to get started.</p>
+  </div>
+
+  <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <ion-list lines="full">
+      <!-- Full Name -->
+      <ion-item>
+        <ion-icon name="person-outline" slot="start" color="medium"></ion-icon>
+        <ion-input label="Full Name" labelPlacement="floating" formControlName="fullName" placeholder="John Doe"
+          [maxlength]="30" [counter]="true"></ion-input>
+        <ion-note slot="error" *ngIf="isInvalid('fullName')">
+          {{ getErrorMessage('fullName') }}
+        </ion-note>
+      </ion-item>
+
+      <!-- Email -->
+      <ion-item>
+        <ion-icon name="mail-outline" slot="start" color="medium"></ion-icon>
+        <ion-input label="Email" labelPlacement="floating" type="email" formControlName="email"
+          placeholder="user@example.com"></ion-input>
+        <ion-note slot="error" *ngIf="isInvalid('email')">
+          {{ getErrorMessage('email') }}
+        </ion-note>
+      </ion-item>
+
+      <!-- Password -->
+      <ion-item>
+        <ion-icon name="lock-closed-outline" slot="start" color="medium"></ion-icon>
+        <ion-input label="Password" labelPlacement="floating" type="password" formControlName="password"
+          placeholder="••••••••"></ion-input>
+        <ion-note slot="error" *ngIf="isInvalid('password')">
+          {{ getErrorMessage('password') }}
+        </ion-note>
+      </ion-item>
+    </ion-list>
+
+    <div class="ion-padding-top">
+      <ion-button expand="block" type="submit" [disabled]="userForm.invalid" class="ion-margin-top">
+        Sign Up
+        <ion-icon name="checkmark-circle-outline" slot="end"></ion-icon>
+      </ion-button>
+    </div>
+  </form>
+
+  <ion-card class="info-card ion-margin-top">
+    <ion-card-content>
+      <ion-text color="medium">
+        <p>
+          <ion-icon name="alert-circle-outline"></ion-icon>
+          Notice how the inputs automatically highlight in red when they are invalid and have been "touched" or edited.
+        </p>
+      </ion-text>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

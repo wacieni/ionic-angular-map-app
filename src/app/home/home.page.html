@@ -1,20 +1,126 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header class="ion-no-border overlay-header">
+  <ion-toolbar color="transparent">
+    <ion-buttons slot="start">
+      <ion-menu-button color="dark"></ion-menu-button>
+      <ion-button color="dark" routerLink="/settings">
+        <ion-icon name="settings-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-searchbar placeholder="Search for a location" class="custom-search" inputmode="search"></ion-searchbar>
+
+    <ion-buttons slot="end">
+      <ion-button routerLink="/user" color="dark" class="ion-no-margin">
+        <ion-icon name="person-circle-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+      <ion-avatar class="user-avatar ion-margin-end" routerLink="/profile">
+        <img alt="User" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar>
+    </ion-buttons>
   </ion-toolbar>
+
+  <ion-grid class="ion-no-padding filter-grid">
+    <ion-row class="ion-padding-horizontal">
+      <ion-col size="auto">
+        <ion-chip color="primary">
+          <ion-icon name="map-outline"></ion-icon>
+          <ion-label>Map</ion-label>
+        </ion-chip>
+      </ion-col>
+      <ion-col size="auto">
+        <ion-chip>
+          <ion-icon name="list-outline"></ion-icon>
+          <ion-label>List</ion-label>
+        </ion-chip>
+      </ion-col>
+      <ion-col size="auto">
+        <ion-chip>
+          <ion-icon name="star"></ion-icon>
+          <ion-label>Saved</ion-label>
+        </ion-chip>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <!-- Mock Map Background -->
+  <div id="map-background">
+    <div class="map-placeholder">
+      <ion-icon name="map-outline" class="bg-icon"></ion-icon>
+      <p>Interactive Map Surface</p>
+    </div>
+  </div>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+  <!-- Map Controls (FABs) -->
+  <ion-fab slot="fixed" vertical="center" horizontal="end">
+    <ion-fab-button size="small" color="light" class="ion-margin-bottom">
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-button size="small" color="light">
+      <ion-icon name="remove-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end" class="fab-location">
+    <ion-fab-button color="primary">
+      <ion-icon name="locate-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- Layers Toggle -->
+  <ion-fab slot="fixed" vertical="top" horizontal="end" class="fab-layers">
+    <ion-fab-button size="small" color="light">
+      <ion-icon name="layers-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <!-- Bottom Panel (Persistent Sheet) -->
+  <div class="bottom-panel">
+    <ion-card class="ion-no-margin">
+      <ion-card-header>
+        <div class="drag-handle"></div>
+        <ion-card-subtitle>Nearby Locations</ion-card-subtitle>
+        <ion-card-title>San Francisco, CA</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="3">
+              <ion-button expand="block" fill="outline" color="medium">
+                <ion-icon name="star" slot="start"></ion-icon>
+                Favs
+              </ion-button>
+            </ion-col>
+            <ion-col size="3">
+              <ion-button expand="block" color="secondary" routerLink="/input-validation">
+                <ion-icon name="checkmark-circle-outline" slot="start"></ion-icon>
+                Check
+              </ion-button>
+            </ion-col>
+            <ion-col size="3">
+              <ion-button expand="block" color="tertiary" routerLink="/routing-demo">
+                <ion-icon name="map-outline" slot="start"></ion-icon>
+                Route
+              </ion-button>
+            </ion-col>
+            <ion-col size="3">
+              <ion-button expand="block" routerLink="/components-basics">
+                Basics
+                <ion-icon name="arrow-forward-outline" slot="end"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <ion-button expand="block" color="warning" routerLink="/task-management" class="ion-margin-top">
+                <ion-icon name="bulb-outline" slot="start"></ion-icon>
+                Learn State Management (Signals)
+              </ion-button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
   </div>
 </ion-content>

@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Routing & Transitions</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="header-section ion-margin-bottom">
+    <h1>Page Transitions</h1>
+    <p>Ionic uses standard Angular routing under the hood, but `ion-router-outlet` adds beautiful transitions between
+      pages.</p>
+  </div>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>AlertController Demo</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Click the button below to see a native Ionic Alert. This is triggered via a "Controller" in the TypeScript
+        file.</p>
+      <ion-button expand="block" (click)="presentAlert()" class="ion-margin-top">
+        Show Native Alert
+        <ion-icon name="notifications-outline" slot="end"></ion-icon>
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <div class="info-section ion-padding">
+    <h3>Pro Tip: CLI Power</h3>
+    <p>We created this page in seconds using the Ionic CLI:</p>
+    <code style="display: block; background: #f0f0f0; padding: 10px; border-radius: 8px;">
+      ionic generate page routing-demo
+    </code>
+    <p>This command handled the file creation AND added the route to `app.routes.ts` automatically!</p>
+  </div>
+</ion-content>
