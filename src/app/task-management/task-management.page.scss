@@ -1,0 +1,27 @@
+.completed {
+    text-decoration: line-through;
+    color: var(--ion-color-medium);
+}
+
+.stats-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.explanation {
+    background: var(--ion-color-light);
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid var(--ion-color-primary);
+
+    h3 {
+        margin-top: 0;
+        color: var(--ion-color-primary);
+    }
+
+    ul {
+        padding-left: 20px;
+        margin-bottom: 0;
+    }
+}

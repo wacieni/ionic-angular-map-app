@@ -1,0 +1,35 @@
+.section {
+  margin-bottom: 24px;
+
+  ion-item-divider {
+    --background: transparent;
+    --padding-start: 0;
+    --padding-bottom: 8px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--ion-color-medium);
+    border: none;
+  }
+
+  .ion-padding {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+ion-card {
+  margin-inline: 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  img {
+    height: 180px;
+    object-fit: cover;
+  }
+}
+
+ion-list {
+  border-radius: 12px;
+  overflow: hidden;
+}

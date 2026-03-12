@@ -1,0 +1,115 @@
+#map-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .map-placeholder {
+    text-align: center;
+    color: #999;
+
+    .bg-icon {
+      font-size: 80px;
+      margin-bottom: 10px;
+      opacity: 0.3;
+    }
+
+    p {
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+  }
+}
+
+.overlay-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 20;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 100%);
+
+  ion-toolbar {
+    --background: transparent;
+    --border-style: none;
+    padding-top: 10px;
+  }
+}
+
+.custom-search {
+  --background: #fff;
+  --border-radius: 12px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+  margin-inline: 8px;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-grid {
+  margin-top: -5px;
+
+  ion-chip {
+    --background: #fff;
+    --box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    margin: 4px;
+    font-weight: 500;
+  }
+}
+
+.fab-layers {
+  margin-top: 110px;
+}
+
+.fab-location {
+  margin-bottom: 180px;
+}
+
+.bottom-panel {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+
+  ion-card {
+    border-radius: 24px 24px 0 0;
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.1);
+
+    .drag-handle {
+      width: 40px;
+      height: 4px;
+      background: #e0e0e0;
+      border-radius: 2px;
+      margin: 10px auto 0;
+    }
+
+    ion-card-header {
+      padding-top: 10px;
+    }
+
+    ion-card-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+  }
+}
+
+/* For mobile devices, adjust FAB positioning */
+@media (max-width: 576px) {
+  .fab-location {
+    margin-bottom: 200px;
+  }
+}

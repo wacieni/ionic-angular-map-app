@@ -1,0 +1,88 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="secondary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Component Basics</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="section">
+    <ion-item-divider>
+      <ion-label>Buttons & Colors</ion-label>
+    </ion-item-divider>
+    <div class="ion-padding">
+      <ion-button color="primary">Primary</ion-button>
+      <ion-button color="secondary">Secondary</ion-button>
+      <ion-button color="tertiary">Tertiary</ion-button>
+      <ion-button color="success">Success</ion-button>
+      <ion-button color="warning">Warning</ion-button>
+      <ion-button color="danger">Danger</ion-button>
+      <ion-button expand="block" shape="round" fill="outline">Block Outline Round</ion-button>
+    </div>
+  </div>
+
+  <div class="section">
+    <ion-item-divider>
+      <ion-label>Cards</ion-label>
+    </ion-item-divider>
+    <ion-card>
+      <img alt="The moon" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+      <ion-card-header>
+        <ion-card-title>Card Title</ion-card-title>
+        <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+      </ion-card-header>
+      <ion-card-content>
+        Cards are a great way to group related information in a structured way.
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <div class="section">
+    <ion-item-divider>
+      <ion-label>Form Inputs</ion-label>
+    </ion-item-divider>
+    <ion-list>
+      <ion-item>
+        <ion-input label="Default Input" placeholder="Enter text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-input label="Floating Label" labelPlacement="floating" placeholder="Type here"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-checkbox>I agree to terms</ion-checkbox>
+      </ion-item>
+      <ion-item>
+        <ion-toggle>Enable Notifications</ion-toggle>
+      </ion-item>
+      <ion-item>
+        <ion-range aria-label="Volume" min="0" max="100" [pin]="true" [ticks]="true" [snaps]="true" [step]="10">
+          <ion-icon slot="start" name="volume-low"></ion-icon>
+          <ion-icon slot="end" name="volume-high"></ion-icon>
+        </ion-range>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <div class="section">
+    <ion-item-divider>
+      <ion-label>Lists</ion-label>
+    </ion-item-divider>
+    <ion-list [inset]="true">
+      <ion-item button>
+        <ion-icon color="primary" slot="start" name="person"></ion-icon>
+        <ion-label>Profile</ion-label>
+        <ion-note slot="end">Active</ion-note>
+      </ion-item>
+      <ion-item button>
+        <ion-icon color="success" slot="start" name="settings"></ion-icon>
+        <ion-label>Settings</ion-label>
+      </ion-item>
+      <ion-item button>
+        <ion-icon color="warning" slot="start" name="help-circle"></ion-icon>
+        <ion-label>Help</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
